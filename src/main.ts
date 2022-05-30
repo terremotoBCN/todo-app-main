@@ -1,4 +1,14 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from "vue";
+import App from "./App.vue";
 
-createApp(App).mount('#app')
+//	theme
+import { storedTheme, switchTheme } from "./ts/themes";
+
+createApp(App).mount("#app");
+if (storedTheme)
+	document.documentElement.setAttribute("data-theme", storedTheme);
+
+const toggle = document.getElementById("theme-toggle");
+if (toggle) {
+	toggle.addEventListener("click", switchTheme);
+}
