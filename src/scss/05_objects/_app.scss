@@ -1,0 +1,13 @@
+@use "../01_settings" as set;
+#app {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	background: set.$Check-Background;
+	color: #2c3e50;
+	color: set.$Bright-Blue;
+	font-family: Avenir, Helvetica, Arial, sans-serif;
+	margin-top: 60px;
+	text-align: center;
+	// max-width: $Layout-Desktop;
+	margin: auto;
+}
