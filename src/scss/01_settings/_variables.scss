@@ -1,54 +1,55 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
-
-// LAYOUT
-
-$Layout-Mobile: 375px !default;
-$Layout-Desktop: 1440px !default;
-
 // Colors
 
 // PRIMARY
-$Bright-Blue: hsl(220, 98%, 61%) !default;
-$Check-Background: linear-gradient(
-	0deg,
-	hsl(192, 100%, 67%),
-	hsl(280, 87%, 65%)
+$bright-blue: hsl(220, 98%, 61%) !default;
+$blue-gradient: hsl(192, 100%, 67%) !default;
+$purple-gradient: hsl(280, 87%, 65%) !default;
+
+$check-color: hsl(236, 33%, 92%) !default;
+$check-background: linear-gradient(
+	45deg,
+	$blue-gradient,
+	$purple-gradient
 ) !default;
+$dark-app-shadow: hsla(235, 21%, 11%, 1) !default;
+$header-image: (
+	"mobile-dark": url("../../assets/bg-mobile-dark.jpg"),
+	"mobile-light": url("../../assets/bg-mobile-light.jpg"),
+	"desktop-dark": url("../../assets/bg-desktop-dark.jpg"),
+	"desktop-light": url("../../assets/bg-desktop-light.jpg"),
+);
 
 // Neutral
-$Neutral-Black: hsl(0, 0%, 10%) !default;
-$Neutral-Gray: hsl(0, 0%, 50%) !default;
-$Neutral-Grey: hsl(0, 0%, 50%) !default;
-$Neutral-White: hsl(0, 0%, 90%) !default;
+$neutral-black: hsl(0, 0%, 10%) !default;
+$neutral-gray: hsl(0, 0%, 50%) !default;
+$neutral-grey: hsl(0, 0%, 50%) !default;
+$neutral-white: hsl(0, 0%, 90%) !default;
 
 // Light Theme
 
-$Very-Light-Gray: hsl(0, 0%, 98%) !default;
-$Very-Light-Grayish-Blue: hsl(236, 33%, 92%) !default;
-$Light-Grayish-Blue: hsl(233, 11%, 84%) !default;
-$Dark-Grayish-Blue: hsl(236, 9%, 61%) !default;
-$Very-Dark-Grayish-Blue: hsl(235, 19%, 35%) !default;
+$light-header-color: hsl(236, 33%, 92%) !default;
+$light-header-gradient: linear-gradient(
+	90deg,
+	hsl(280, 87%, 65%),
+	hsl(192, 100%, 67%)
+) !default;
+
+$light-app-background: hsl(235, 32%, 92%) !default;
+$light-item-background: hsl(236, 0%, 98%) !default;
+$light-item-decor: hsl(233, 11%, 84%) !default;
+$light-text-color: hsl(235, 19%, 35%) !default;
+$light-text-color-disabled: hsl(236, 9%, 61%) !default;
 
 // Dark Theme
-
-$Very-Dark-Blue: hsl(235, 21%, 11%) !default;
-$Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%) !default;
-$Light-Grayish-Blue: hsl(234, 39%, 85%) !default;
-$Light-Grayish-Blue--hover: hsl(236, 33%, 92%) !default;
-$Dark-Grayish-Blue: hsl(234, 11%, 52%) !default;
-$Very-Dark-Grayish-Blue: hsl(233, 14%, 35%) !default;
-$Very-Dark-Grayish-Blue: hsl(237, 14%, 26%) !default;
-
-// Typography
-
-// Body Copy
-
-$Font-size: 18px !default;
-
-//	Font
-
-$Font-Family: "Josefin Sans", sans-serif !default;
-$Font-Weights: (
-	"regular": 400,
-	"bold": 700,
+$dark-header-color: hsl(236, 33%, 92%) !default;
+$dark-header-gradient: linear-gradient(
+	-90deg,
+	hsl(280, 87%, 65%),
+	hsl(192, 100%, 67%)
 ) !default;
+
+$dark-app-background: hsl(235, 24%, 19%) !default;
+$dark-item-background: hsl(237, 14%, 26%) !default;
+$dark-item-decor: hsl(233, 14%, 35%) !default;
+$dark-text-color: hsl(234, 39%, 85%) !default;
+$dark-text-color-disabled: hsl(234, 11%, 52%) !default;

@@ -23,8 +23,5 @@
 </template>
 
 <style scope lang="scss">
-	@use "../scss/01_settings" as settings;
-	.todo-item {
-		@include settings.flexbox(row, space-between, center);
-	}
+	@use "../scss/02_tools" as tools;
 </style>

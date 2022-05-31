@@ -19,7 +19,7 @@
 
 	<!-- Add dynamic number -->
 	items left All Active Completed Clear Completed
-	<!-- <todo-attribution></todo-attribution> -->
+	<todo-attribution></todo-attribution>
 </template>
 
 <style lang="scss"></style>

@@ -19,5 +19,5 @@
 <script setup lang="ts"></script>
 
 <style scoped lang="scss">
-	@use "../scss/05_objects/attribution" as att;
+	@use "../scss/06_components/TodoAttribution" as attrib;
 </style>

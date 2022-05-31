@@ -1,5 +1,5 @@
-@use "01_settings" as set;
-@use "02_tools" as tools;
+@forward "01_settings";
+@forward "02_tools";
 @use "03_generic" as generic;
 @use "04_elements" as elements;
 @use "05_objects" as objects;

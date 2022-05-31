@@ -1,0 +1,7 @@
+@use "../01_settings/" as settings;
+@use "../02_tools/" as tools;
+
+.todo-header {
+	@include tools.flexbox(row, space-between, center);
+	color: var(--header-color);
+}

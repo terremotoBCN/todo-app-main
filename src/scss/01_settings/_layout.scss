@@ -1,0 +1,9 @@
+/*	LAYOUT & Brackponts	*/
+$brakpoint-mobile: 375px !default;
+$brakpoint-desktop: 1440px !default;
+
+// LAYOUT
+$layout-size: (
+	"mobile": $brakpoint-mobile,
+	"desktop": $brakpoint-desktop,
+) !default;

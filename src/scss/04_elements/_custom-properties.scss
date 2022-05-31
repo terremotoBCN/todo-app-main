@@ -1,0 +1,46 @@
+// @use "sass:map";
+@use "../01_settings" as settings;
+
+:root {
+	// layout
+	--layout-mobile: #{map-get(settings.$layout-size, "mobile")};
+	--layout-desktop: #{map-get(settings.$layout-size, "desktop")};
+
+	// PRIMARY
+	--bright-blue: #{settings.$bright-blue};
+	--check-color: #{settings.$check-color};
+	--check-background: #{settings.$check-background};
+	--dark-app-shadow: #{settings.$dark-app-shadow};
+
+	// theme colors
+	--header-color: #{settings.$light-header-color};
+	--header-gradient: #{settings.$light-header-gradient};
+
+	--app-background: #{settings.$light-app-background};
+	--item-background: #{settings.$light-item-background};
+	--item-decor: #{settings.$light-item-decor};
+	--text-color: #{settings.$light-text-color};
+	--text-color-disabled: #{settings.$light-text-color-disabled};
+}
+
+html[data-theme="theme-todo-light"] {
+	--header-color: #{settings.$light-header-color};
+	--header-gradient: #{settings.$light-header-gradient};
+
+	--app-background: #{settings.$light-app-background};
+	--item-background: #{settings.$light-item-background};
+	--item-decor: #{settings.$light-item-decor};
+	--text-color: #{settings.$light-text-color};
+	--text-color-disabled: #{settings.$light-text-color-disabled};
+}
+
+html[data-theme="theme-todo-dark"] {
+	--header-color: #{settings.$dark-header-color};
+	--header-gradient: #{settings.$dark-header-gradient};
+
+	--app-background: #{settings.$dark-app-background};
+	--item-background: #{settings.$dark-item-background};
+	--item-decor: #{settings.$dark-item-decor};
+	--text-color: #{settings.$dark-text-color};
+	--text-color-disabled: #{settings.$dark-text-color-disabled};
+}

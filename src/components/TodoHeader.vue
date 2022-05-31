@@ -20,9 +20,5 @@
 </template>
 
 <style lang="scss">
-	.todo-header {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
+	@use "../scss/06_components/TodoHeader" as header;
 </style>

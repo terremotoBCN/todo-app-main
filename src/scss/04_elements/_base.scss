@@ -1,9 +1,20 @@
+@use "../01_settings/" as settings;
+
 html,
 body {
 	margin: 0;
+	font-size: var(--font-size, settings.$font-size);
+	font-family: var(--font-family, settings.$font-family);
 }
 
 body {
 	min-height: 100vh;
-	background-color: rebeccapurple;
+	color: var(--text-color, settings.$light-text-color);
+	background-color: var(--app-background, settings.$light-app-background);
+	transition: 333ms 111ms background-color ease-in-out;
+	// background-image: var(--header-gradient, settings.$header-gradient);
+}
+
+a {
+	color: var(--bright-blue, settings.$bright-blue);
 }
