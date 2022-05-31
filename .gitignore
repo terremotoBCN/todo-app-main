@@ -42,3 +42,4 @@ node_modules
 
 #	Ignore Folders
 todo-app-main
+vite.config copy.ts

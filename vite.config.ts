@@ -2,7 +2,9 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 
 // https://vitejs.dev/config/
+/*
 export default defineConfig({
+	base: "/",
 	plugins: [vue()],
 	css: {
 		preprocessorOptions: {
@@ -48,4 +50,24 @@ export default defineConfig({
 			},
 		},
 	},
+});
+*/
+
+export default defineConfig(({ command, mode }) => {
+	if (command === "serve") {
+		console.info("COMMAND SERVE >> ::", command);
+		return {
+			// dev specific config
+			base: "/",
+			plugins: [vue()],
+		};
+	} else {
+		// command === 'build'
+		console.info("COMMAND BUILD >> ::", command);
+		return {
+			// build specific config
+			base: "/todo-app-main/",
+			plugins: [vue()],
+		};
+	}
 });
