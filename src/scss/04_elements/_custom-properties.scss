@@ -23,7 +23,9 @@
 	--text-color-disabled: #{settings.$light-text-color-disabled};
 }
 
-html[data-theme="theme-todo-light"] {
+html[data-theme="light"],
+html[data-theme*="light"],
+html[data-theme~="light" i] {
 	--header-color: #{settings.$light-header-color};
 	--header-gradient: #{settings.$light-header-gradient};
 
@@ -34,7 +36,9 @@ html[data-theme="theme-todo-light"] {
 	--text-color-disabled: #{settings.$light-text-color-disabled};
 }
 
-html[data-theme="theme-todo-dark"] {
+html[data-theme="dark"],
+html[data-theme*="dark"],
+html[data-theme~="dark" i] {
 	--header-color: #{settings.$dark-header-color};
 	--header-gradient: #{settings.$dark-header-gradient};
 
