@@ -19,5 +19,7 @@
 <script setup lang="ts"></script>
 
 <style scoped lang="scss">
-	@use "../scss/06_components/TodoAttribution" as attrib;
+	// .attribution {
+	// 	background: var(--header-gradient);
+	// }
 </style>
