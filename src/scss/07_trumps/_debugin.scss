@@ -1,0 +1,42 @@
+@use "../01_settings" as settings;
+@use "../02_tools" as tools;
+@use "sass:color";
+
+html {
+	position: relative;
+	&:after {
+		content: "Mobile First";
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 11;
+		margin: 0.3rem;
+		padding: 0.3rem 0.6rem;
+		// background-color: color.adjust(settings.$blue-gradient, $alpha: 0.5);
+		background-color: adjust-color(
+			$color: settings.$bright-blue,
+			$alpha: -0.5
+		);
+		font-size: 0.66rem;
+		border-radius: 5rem;
+
+		@include tools.mqDesktop {
+			content: "Desktop";
+			background-color: adjust-color($color: #000000, $alpha: -0.5);
+			color: whitesmoke;
+		}
+	}
+}
+
+// body {
+// 	background-color: settings.$dark-item-background;
+// 	@include tools.mqDesktop {
+// 		background-color: orange;
+// 	}
+// }
+
+#app {
+	&:hover {
+		background-image: url(~/../../../../design/mobile-design-dark.jpg);
+	}
+}

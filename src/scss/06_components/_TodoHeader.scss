@@ -1,7 +1,86 @@
+// @use "sass:color";
 @use "../01_settings/" as settings;
 @use "../02_tools/" as tools;
 
 .todo-header {
-	@include tools.flexbox(row, space-between, center);
 	color: var(--header-color);
+	padding: 40px 24px 30px 24px;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	height: 108px;
+	box-sizing: border-box;
+
+	&__title {
+		// font-family: sans-serif;
+		color: orange;
+		margin: 0;
+		// margin-bottom: -0.6rem;
+		letter-spacing: 0.55rem;
+		// background-color: #ccffee;
+		line-height: auto;
+		padding-top: 0.3rem;
+		font-size: 1.5rem;
+	}
+
+	&__theme_toggle {
+		margin: 0px;
+		padding: 0.2rem;
+		border: 0;
+		background: none;
+		width: 1.8rem;
+		height: 1.8rem;
+		cursor: pointer;
+		position: relative;
+		border-radius: 50%;
+		transition: 0.666s background ease-in-out;
+		background-color: adjust-color($color: orange, $alpha: -0.8);
+
+		& > span {
+			display: none;
+		}
+
+		&:hover {
+			background-color: rgba(settings.$light-app-background, 0.25);
+		}
+
+		&::before {
+			background-image: url("/src/assets/icon-sun.svg");
+			@include tools.toggleThemeIcons("/src/assets/icon-moon.svg");
+		}
+		&::after {
+			background-image: url("/src/assets/icon-sun.svg");
+			@include tools.toggleThemeIcons("/src/assets/icon-sun.svg");
+		}
+
+		&--light {
+			&:hover {
+				background-color: rgba(settings.$dark-app-background, 0.33);
+			}
+			&::before {
+				opacity: 1;
+				transform: rotate(0deg);
+			}
+			&::after {
+				opacity: 0;
+				transform: rotate(-90deg);
+			}
+		}
+
+		&--dark {
+			&:hover {
+				background-color: rgba(settings.$light-app-background, 0.33);
+			}
+			&::before {
+				opacity: 0;
+				transform: rotate(90deg);
+			}
+			&::after {
+				opacity: 1;
+				transform: rotate(0deg);
+			}
+		}
+	}
 }

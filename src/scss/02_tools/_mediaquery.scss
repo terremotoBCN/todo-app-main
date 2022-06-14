@@ -1,0 +1,29 @@
+@use "../01_settings" as settings;
+
+@mixin mediaquery($size: #{settings.$brakpoint-mobile}) {
+	/* mq bigger than desktop */
+	@media screen and (min-width: $size) {
+		@content;
+	}
+}
+
+@mixin mqMobile() {
+	/* mq mobile */
+	@media screen and (max-width: settings.$brakpoint-mobile) {
+		@content;
+	}
+}
+
+@mixin mqDesktop() {
+	/* mq bigger than mobile */
+	@media screen and (min-width: settings.$brakpoint-mobile) {
+		@content;
+	}
+}
+
+@mixin mqWide() {
+	/* mq bigger than desktop */
+	@media screen and (min-width: settings.$brakpoint-desktop) {
+		@content;
+	}
+}

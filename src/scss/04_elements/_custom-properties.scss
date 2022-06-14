@@ -2,27 +2,37 @@
 @use "../01_settings" as settings;
 
 :root {
+	// Variables
+	--border-radius: #{settings.$border-radius};
+
 	// layout
 	--layout-mobile: #{map-get(settings.$layout-size, "mobile")};
 	--layout-desktop: #{map-get(settings.$layout-size, "desktop")};
 
 	// PRIMARY
 	--bright-blue: #{settings.$bright-blue};
-	--check-color: #{settings.$check-color};
-	--check-background: #{settings.$check-background};
+	--blue-gradient: #{settings.$blue-gradient};
+	--purple-gradient: #{settings.$purple-gradient};
 	--dark-app-shadow: #{settings.$dark-app-shadow};
 
-	// theme colors
-	--header-color: #{settings.$light-header-color};
-	--header-gradient: #{settings.$light-header-gradient};
+	--check-color: #{settings.$check-color};
+	--check-background: #{settings.$check-background};
 
-	--app-background: #{settings.$light-app-background};
-	--item-background: #{settings.$light-item-background};
-	--item-decor: #{settings.$light-item-decor};
-	--text-color: #{settings.$light-text-color};
-	--text-color-disabled: #{settings.$light-text-color-disabled};
+	/*	APP DARK THEME - default	*/
+	// Dark theme colors for default
+	--header-color: #{settings.$dark-header-color};
+	--header-gradient: #{settings.$dark-header-gradient};
+
+	--app-background: #{settings.$dark-app-background};
+
+	--item-background: #{settings.$dark-item-background};
+	--item-color: #{settings.$dark-item-color};
+
+	--text-color: #{settings.$dark-text-color};
+	--text-color-disabled: #{settings.$dark-text-color-disabled};
 }
 
+/*	APP LIGHT THEME	*/
 html[data-theme="light"],
 html[data-theme*="light"],
 html[data-theme~="light" i] {
@@ -30,12 +40,15 @@ html[data-theme~="light" i] {
 	--header-gradient: #{settings.$light-header-gradient};
 
 	--app-background: #{settings.$light-app-background};
+
 	--item-background: #{settings.$light-item-background};
-	--item-decor: #{settings.$light-item-decor};
+	--item-color: #{settings.$light-item-color};
+
 	--text-color: #{settings.$light-text-color};
 	--text-color-disabled: #{settings.$light-text-color-disabled};
 }
 
+/*	APP DARK THEME - default	*/
 html[data-theme="dark"],
 html[data-theme*="dark"],
 html[data-theme~="dark" i] {
@@ -43,8 +56,10 @@ html[data-theme~="dark" i] {
 	--header-gradient: #{settings.$dark-header-gradient};
 
 	--app-background: #{settings.$dark-app-background};
+
 	--item-background: #{settings.$dark-item-background};
-	--item-decor: #{settings.$dark-item-decor};
+	--item-color: #{settings.$dark-item-color};
+
 	--text-color: #{settings.$dark-text-color};
 	--text-color-disabled: #{settings.$dark-text-color-disabled};
 }

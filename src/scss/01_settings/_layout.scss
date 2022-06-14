@@ -1,8 +1,14 @@
 /*	LAYOUT & Brackponts	*/
-$brakpoint-mobile: 375px !default;
+
+// original breakpoint -- Frontend-Mentor Challenge
+// $brakpoint-mobile: 375px !default;
+
+// 429px for iphone PRO Max.
+$brakpoint-mobile: 429px !default;
+// Desktop
 $brakpoint-desktop: 1440px !default;
 
-// LAYOUT
+// LAYOUT BREAKPOINTS
 $layout-size: (
 	"mobile": $brakpoint-mobile,
 	"desktop": $brakpoint-desktop,

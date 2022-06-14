@@ -9,8 +9,8 @@ body {
 
 body {
 	min-height: 100vh;
-	color: var(--text-color, settings.$light-text-color);
-	background-color: var(--app-background, settings.$light-app-background);
+	color: var(--text-color, settings.$dark-text-color);
+	background-color: var(--app-background, settings.$dark-app-background);
 	transition: 333ms 111ms background-color ease-in-out;
 	// background-image: var(--header-gradient, settings.$header-gradient);
 }

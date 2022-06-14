@@ -1,0 +1,10 @@
+// @media Print
+@media print {
+	html,
+	body,
+	#app {
+		background: none;
+
+		font-size: 11pt;
+	}
+}

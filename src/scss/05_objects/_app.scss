@@ -1,25 +1,36 @@
-@use "../01_settings" as *;
+@use "../01_settings" as settings;
+@use "../02_tools/" as tools;
 #app {
-	--deg-gradient: 90deg;
-
-	// background-image: var(--header-gradient);
-	background-image: linear-gradient(
-		var(--deg-gradient),
-		$blue-gradient,
-		$purple-gradient
+	position: relative;
+	// height: 100vh;
+	@include tools.flexbox(
+		$direction: column,
+		$content: justify-content,
+		$items: stretch
 	);
-	transition: 1s 1s background ease-in-out;
-	background-position: top center;
-	background-repeat: repeat-x;
-	background-size: auto 200px;
+	box-sizing: border-box;
+	padding-bottom: 1.6rem;
 	min-height: 100vh;
+	background-color: settings.$dark-app-background;
+	background-image: url();
+	background: #{settings.$dark-app-background} url("~/../../assets/bg-mobile-dark.jpg")
+		repeat-x;
+	background-size: inherit 200px;
+	background-position: 50% 0%;
 
-	&:hover {
-		--deg-gradient: -90deg;
-		background-image: linear-gradient(
-			var(--deg-gradient),
-			$blue-gradient,
-			$purple-gradient
-		);
-	}
+	// &::before {
+	// 	content: "";
+	// 	height: 200px;
+	// 	background: $purple-gradient url("~/../../assets/bg-mobile-dark.jpg")
+	// 		x-repeat 50% 50%;
+	// 	background-image: url("~/../../assets/bg-mobile-dark.jpg");
+	// 	background-position: 50% 50%;
+	// 	background-size: var(--brakpoint-mobile, $brakpoint-mobile) auto;
+	// 	object-fit: cover;
+	// 	object-position: center center;
+	// 	position: absolute;
+	// 	width: 100%;
+	// 	min-width: 100vw;
+	// 	z-index: -1;
+	// }
 }
