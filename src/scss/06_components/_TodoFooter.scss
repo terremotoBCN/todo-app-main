@@ -1,0 +1,8 @@
+@use "../01_settings/" as settings;
+@use "../02_tools/" as tools;
+
+/* 	TODO-FOOTER :: COMPONENTS 	*/
+.todo-footer {
+	padding: 0 24px;
+	@include tools.flexbox($direction: row, $content: space-between);
+}
