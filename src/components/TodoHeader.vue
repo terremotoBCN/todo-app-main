@@ -7,18 +7,16 @@
 <template>
 	<header class="todo-header">
 		<h1 class="todo-header__title">{{ appTitle }}</h1>
-		<!-- /// .todo-header__title -->
 
-		<div class="todo-header__theme">
-			<button id="theme-toggle" type="button">
-				<img src="../assets/icon-sun.svg" alt="Light theme" />
-			</button>
-		</div>
-		<!-- /// .todo-header__theme -->
+		<button
+			id="theme-toggle"
+			class="todo-header__theme_toggle todo-header__theme_toggle--dark"
+			type="button"
+		>
+			<span> toggle theme </span>
+		</button>
 	</header>
 	<!-- /// .todo-header -->
 </template>
 
-<style lang="scss">
-	@use "../scss/06_components/TodoHeader" as header;
-</style>
+<style lang="scss"></style>
