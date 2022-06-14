@@ -60,6 +60,17 @@ export default defineConfig(({ command, mode }) => {
 			// dev specific config
 			base: "/",
 			plugins: [vue()],
+			css: {
+				preprocessorOptions: {
+					scss: {
+						additionalData: `
+							@use "/src/scss/01_settings/" as settings;
+							@use "/src/scss/02_tools/" as tools;
+
+						`,
+					},
+				},
+			},
 		};
 	} else {
 		// command === 'build'
