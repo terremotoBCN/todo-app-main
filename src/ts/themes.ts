@@ -8,7 +8,7 @@ export const storedTheme =
 		? themeDark
 		: themeLight);
 
-console.warn("storedTheme::>>", storedTheme);
+console.info(" :arrow_lower_right:  storedTheme::>>", storedTheme);
 
 export function setTheme(theme: string) {
 	const themeToogle = document.getElementById("theme-toggle");
@@ -60,7 +60,3 @@ export function switchTheme() {
 		console.error("Error Swtiching theme", error);
 	}
 }
-
-// export { themeName, themeDark, themeLight, switchTheme };
-
-// export {};

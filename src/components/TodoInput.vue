@@ -1,8 +1,12 @@
 <script setup lang="ts">
 	import { ref, Ref } from "vue";
+	import { useTodoList } from "../composables/useTodoList";
+
 	// const task = ref();
 
-	const taskName = ref("");
+	const taskName: Ref<string> = ref("");
+
+	const { createNewTask } = useTodoList();
 </script>
 
 <template>
@@ -15,8 +19,8 @@
 		/>
 		<button
 			@click="
-				$emit('createTask', taskName);
-				taskName = ``;
+				createNewTask(taskName);
+				taskName = '';
 			"
 		>
 			dame

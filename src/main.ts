@@ -1,4 +1,4 @@
-import { createApp } from "vue";
+import { createApp, VueElement } from "vue";
 import App from "./App.vue";
 
 //	theme
@@ -14,3 +14,4 @@ if (toggle) {
 }
 
 //window.onload = () => switchTheme();
+// export const eventBus = createApp({});
