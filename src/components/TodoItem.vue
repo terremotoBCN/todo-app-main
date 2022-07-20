@@ -50,51 +50,51 @@
 </template>
 
 <style scope lang="scss">
-	.todo-item {
-		font-size: 0.75em;
-		background-color: var(--item-background);
-		color: var(--text-color);
-		padding: 0.5rem 1rem;
+	// .todo-item {
+	// 	font-size: 0.75em;
+	// 	background-color: var(--item-background);
+	// 	color: var(--text-color);
+	// 	padding: 0.5rem 1rem;
 
-		border: 3px solid var(--item-color);
+	// 	border: 3px solid var(--item-color);
 
-		@include tools.flexbox($direction: row, $content: space-between);
+	// 	@include tools.flexbox($direction: row, $content: space-between);
 
-		cursor: grab;
-		background: none;
+	// 	cursor: grab;
+	// 	background: none;
 
-		&__check {
-			display: none;
-		}
+	// 	&__check {
+	// 		display: none;
+	// 	}
 
-		img {
-			box-sizing: border-box;
-			padding: 0.2em;
-			border-radius: 50%;
-			width: 12px;
-			height: 12px;
-			background: settings.$light-header-gradient;
-		}
+	// 	img {
+	// 		box-sizing: border-box;
+	// 		padding: 0.2em;
+	// 		border-radius: 50%;
+	// 		width: 12px;
+	// 		height: 12px;
+	// 		background: settings.$light-header-gradient;
+	// 	}
 
-		&.drag-start {
-			opacity: 0.3;
-		}
-		&.drag-end {
-			opacity: 1;
-		}
+	// 	&.drag-start {
+	// 		opacity: 0.3;
+	// 	}
+	// 	&.drag-end {
+	// 		opacity: 1;
+	// 	}
 
-		&.over {
-			border: 3px dashed indigo;
-			background-color: red;
-		}
-	}
+	// 	&.over {
+	// 		border: 3px dashed indigo;
+	// 		background-color: red;
+	// 	}
+	// }
 
-	.over {
-		border: 3px dashed indigo;
-		background-color: red;
-	}
-	[draggable] {
-		user-select: none;
-	}
+	// .over {
+	// 	border: 3px dashed indigo;
+	// 	background-color: red;
+	// }
+	// [draggable] {
+	// 	user-select: none;
+	// }
 	// @use "../scss/02_tools" as tools;
 </style>
