@@ -1,6 +1,6 @@
-@use "../01_settings" as settings;
-@use "../02_tools" as tools;
 @use "sass:color";
+@use "../settings" as settings;
+@use "../tools" as tools;
 
 html {
 	position: relative;
@@ -38,5 +38,6 @@ html {
 #app {
 	&:hover {
 		background-image: url(~/../../../../design/mobile-design-dark.jpg);
+		background-repeat: no-repeat;
 	}
 }

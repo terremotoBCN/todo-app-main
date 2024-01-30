@@ -1,8 +1,5 @@
-//
-// @use "01_settings" as settings;
-// @use "02_tools" as tools;
-@use "03_generic" as generic;
-@use "04_elements" as elements;
-@use "05_objects" as objects;
-@use "06_components" as components;
-@use "07_trumps" as trumps;
+@use "generic" as generic;
+@use "elements" as elements;
+@use "objects" as objects;
+@use "components" as components;
+@use "trumps" as trumps;
