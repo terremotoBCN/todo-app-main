@@ -64,8 +64,8 @@ export default defineConfig(({ command, mode }) => {
 				preprocessorOptions: {
 					scss: {
 						additionalData: `
-							@use "/src/scss/01_settings/" as settings;
-							@use "/src/scss/02_tools/" as tools;
+							@use "/src/scss/settings/" as settings;
+							@use "/src/scss/tools/" as tools;
 
 						`,
 					},

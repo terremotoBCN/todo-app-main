@@ -1,5 +1,6 @@
 import { createApp, VueElement } from "vue";
 import App from "./App.vue";
+import "../src/scss/styles.scss";
 
 //	theme
 import { storedTheme, switchTheme } from "./ts/themes";
