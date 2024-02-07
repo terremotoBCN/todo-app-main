@@ -1,19 +1,20 @@
-@use "../settings/" as settings;
-@use "../tools/" as tools;
+@use "../settings";
+@use "../tools";
 
 /* TODO-FILTER : COMPONENTS */
 .todo-filter {
 	box-sizing: border-box;
-	margin: 24px;
-	padding: 13px 24px;
-	background-color: var(--item-background, settings.$dark-item-background);
-	color: var(--text-color-disabled, settings.$dark-text-color-disabled);
+	padding: 12px 24px;
+	min-height: 52px;
+
+	background-color: var(--footer-background, settings.$dark-item-background);
+	color: var(--footer-color, settings.$dark-footer-color);
 	font-size: 0.8em;
 	font-weight: map-get($map: settings.$font-weights, $key: "bold");
 
 	border-radius: var(--border-radius);
-	box-shadow: 0px 16px 24px -8px adjust-color($color:
-				settings.$dark-app-shadow, $lightness: -15%, $alpha: -0.66);
+
+	box-shadow: settings.$module-shadow;
 
 	ul {
 		list-style: none;
@@ -32,17 +33,15 @@
 	display: inline-block;
 	padding: 0.2em 0.5em;
 	text-decoration: none;
-	color: var(--text-color-disabled, settings.$dark-text-color-disabled);
+	color: var(--footer-color, settings.$dark-footer-color);
 
 	&:hover {
-		color: var(--text-color, settings.$dark-text-color);
+		color: var(--footer-color-hover, settings.$dark-footer-color-hover);
 	}
-	&--active {
-		color: settings.$bright-blue;
-
+	&#{&}--active {
+		color: var(--bright-blue, settings.$bright-blue);
 		&:hover {
-			text-shadow: 0px 0px 5px
-				adjust-color($color: settings.$bright-blue, $alpha: 1);
+			text-shadow: 0 0 20px currentColor;
 		}
 	}
 }

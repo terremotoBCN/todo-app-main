@@ -1,20 +1,30 @@
-@use "../settings/" as settings;
+@use "../settings";
+@use "../tools";
+
+* {
+	box-sizing: border-box;
+}
 
 html,
 body {
 	margin: 0;
 	font-size: var(--font-size, settings.$font-size);
 	font-family: var(--font-family, settings.$font-family);
+	letter-spacing: -0.5pt;
 }
 
 body {
 	min-height: 100vh;
-	color: var(--text-color, settings.$dark-text-color);
 	background-color: var(--app-background, settings.$dark-app-background);
-	transition: 333ms 111ms background-color ease-in-out;
-	// background-image: var(--header-gradient, settings.$header-gradient);
+	color: var(--app-color, settings.$dark-app-color);
+
+	@include tools.themeTransition;
 }
 
 a {
 	color: var(--bright-blue, settings.$bright-blue);
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
 }

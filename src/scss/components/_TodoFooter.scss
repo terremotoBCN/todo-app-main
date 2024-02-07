@@ -1,8 +1,59 @@
-@use "../settings/" as settings;
-@use "../tools/" as tools;
+@use "../settings";
+@use "../tools";
 
-/* 	TODO-FOOTER :: COMPONENTS 	*/
+//* 	TODO-FOOTER :: COMPONENTS 	*/
 .todo-footer {
-	padding: 0 24px;
-	@include tools.flexbox($direction: row, $content: space-between);
+	margin: 0;
+	padding: 0;
+
+	max-width: 540px;
+
+	border-bottom-color: transparent;
+
+	@include tools.themeTransition;
+
+	display: grid;
+	justify-content: stretch;
+	grid-row: 2;
+	// grid-template-rows: 52px auto;
+	// grid-template-columns: 1fr 1fr;
+	grid-template-areas:
+		"tasks-counter tasks-clear"
+		"tasks-filter";
+
+	&__counter,
+	&__clear {
+		font-size: 10pt;
+
+		padding: 12px 20px;
+		min-height: 52px;
+
+		background: var(--item-background);
+		box-shadow: settings.$module-shadow;
+
+		display: grid;
+		place-content: center;
+
+		@include tools.themeTransition;
+	}
+
+	&__counter {
+		grid-area: "tasks-counter";
+		border-bottom-left-radius: settings.$module-border-radius;
+		justify-content: start;
+	}
+
+	&__clear {
+		justify-content: end;
+		grid-area: "tasks-clear";
+		border-bottom-right-radius: settings.$module-border-radius;
+	}
+
+	&__filter {
+		grid-column: span 2;
+		grid-area: "tasks-filters";
+		margin-top: 24px;
+
+		@include tools.themeTransition;
+	}
 }

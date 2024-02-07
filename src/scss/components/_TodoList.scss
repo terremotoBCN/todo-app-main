@@ -1,1 +1,39 @@
 // TODO LIST
+@use "../settings";
+@use "../tools";
+
+.todo-list {
+	margin-top: 16px;
+	// background-color: var(--item-background);
+
+	border-radius: settings.$module-border-radius;
+
+	&__list {
+		list-style: none;
+		margin: auto;
+		padding: 0;
+	}
+
+	&__note {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 24px;
+
+		width: auto;
+		min-height: 52px;
+
+		background-color: var(--item-background);
+		color: var(--item-color);
+
+		@include tools.themeTransition;
+
+		box-shadow: settings.$module-shadow;
+		border-radius: settings.$module-border-radius;
+
+		font-size: 1em;
+		font-variant-ligatures: common-ligatures;
+		font-kerning: -10;
+		letter-spacing: -0.5pt;
+		text-align: center;
+	}
+}

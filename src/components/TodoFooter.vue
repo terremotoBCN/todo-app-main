@@ -1,6 +1,9 @@
 <script setup lang="ts">
-	import { defineEmits } from "vue";
+	import { ref, computed } from "vue";
 	import TodoFilter from "./TodoFilter.vue";
+	import { showTodosList } from "../composables/useTodoList";
+
+	const taskLeft = ref(0);
 
 	const emits = defineEmits<{
 		(emit: "filter", value: string): void;
@@ -10,27 +13,35 @@
 		// alert("filtered by " + mode);
 		emits("filter", mode);
 	};
+
+	const totalTaskLeft = computed(() => {
+		taskLeft.value = 0;
+		showTodosList.value.filter((task) =>
+			task.isChecked ? null : taskLeft.value++
+		);
+		return taskLeft;
+	});
 </script>
 
 <template>
 	<div class="todo-footer">
-		<div class="todo-counter">
+		<div v-if="totalTaskLeft.value === 1" class="todo-footer__counter">
 			<!-- Add dynamic number -->
-			<span class="todo-counter__items">0</span> items left
+			{{ totalTaskLeft }} pending task
 		</div>
-		<todo-filter @filter="filter"></todo-filter>
-		<div class="todo-clear">
+		<div v-else-if="totalTaskLeft.value > 1" class="todo-footer__counter">
+			<!-- Add dynamic number -->
+			{{ totalTaskLeft }} pending tasks
+		</div>
+		<div v-else class="todo-footer__counter">
+			<!-- Add dynamic number -->
+			No pending task
+		</div>
+		<div class="todo-footer__clear">
 			<a href="#" title="Clear Completed items"> Clear Completed </a>
 		</div>
+		<todo-filter class="todo-footer__filter" @filter="filter"></todo-filter>
 	</div>
 
 	<p>Drag and Drop to reorder list</p>
 </template>
-
-<style scoped lang="scss">
-	// sass vars defined on vite.config.ts
-	// .todo-footer {
-	// 	background: settings.$dark-header-gradient;
-	// 	color: settings.$purple-gradient;
-	// }
-</style>

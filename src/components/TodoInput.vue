@@ -2,29 +2,26 @@
 	import { ref, Ref } from "vue";
 	import { useTodoList } from "../composables/useTodoList";
 
-	// const task = ref();
-
 	const taskName: Ref<string> = ref("");
 
 	const { createNewTask } = useTodoList();
+
+	function addTodoTask(event: Event) {
+		event.preventDefault();
+		createNewTask(taskName.value);
+		taskName.value = "";
+	}
 </script>
 
 <template>
-	<div class="todo-input">
+	<form @submit="addTodoTask" class="todo-input">
 		<input
+			id="new-task-field"
 			type="text"
 			class="todo-input__field"
-			placeholder="Insert Task"
+			placeholder="Create a new todo..."
 			v-model="taskName"
+			autofocus
 		/>
-		<button
-			@click="
-				createNewTask(taskName);
-				taskName = '';
-			"
-		>
-			dame
-		</button>
-	</div>
-	<!-- /// .todo-input -->
+	</form>
 </template>

@@ -1,1 +1,7 @@
-$border-radius: 6px;
+@use "./colors";
+$module-border-radius: 6px;
+
+$module-shadow: 0px 8px 16px
+	rgba(colors.$dark-theme_very-dark-desaturated-blue, 0.1);
+
+$transition-theme: ease-in 0.2s;

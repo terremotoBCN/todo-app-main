@@ -1,7 +1,5 @@
 <script setup lang="ts">
-	import { defineEmits } from "vue";
-
-	const emit = defineEmits<{
+	const emitters = defineEmits<{
 		(e: "filter", value: string): void;
 	}>();
 </script>
@@ -13,7 +11,7 @@
 				<a
 					class="todo-filter__opt todo-filter__opt--active"
 					href="#"
-					@click="emit('filter', 'all')"
+					@click="emitters('filter', 'all')"
 				>
 					All
 				</a>
@@ -22,7 +20,7 @@
 				<a
 					class="todo-filter__opt"
 					href="#"
-					@click="emit('filter', 'active')"
+					@click="emitters('filter', 'active')"
 				>
 					Active
 				</a>
@@ -31,7 +29,7 @@
 				<a
 					class="todo-filter__opt"
 					href="#"
-					@click="emit('filter', 'complete')"
+					@click="emitters('filter', 'complete')"
 				>
 					Completed
 				</a>

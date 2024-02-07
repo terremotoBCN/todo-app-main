@@ -1,4 +1,4 @@
-@use "../settings" as settings;
+@use "../settings";
 
 @mixin mediaquery($size: #{settings.$brakpoint-mobile}) {
 	/* mq bigger than desktop */
@@ -9,14 +9,14 @@
 
 @mixin mqMobile() {
 	/* mq mobile */
-	@media screen and (max-width: settings.$brakpoint-mobile) {
+	@media screen and (width <= settings.$brakpoint-mobile) {
 		@content;
 	}
 }
 
 @mixin mqDesktop() {
 	/* mq bigger than mobile */
-	@media screen and (min-width: settings.$brakpoint-mobile) {
+	@media screen and (width > settings.$brakpoint-mobile) {
 		@content;
 	}
 }

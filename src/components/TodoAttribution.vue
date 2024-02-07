@@ -15,11 +15,3 @@
 		>.
 	</div>
 </template>
-
-<script setup lang="ts"></script>
-
-<style scoped lang="scss">
-	// .attribution {
-	// 	background: var(--header-gradient);
-	// }
-</style>

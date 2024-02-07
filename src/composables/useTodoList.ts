@@ -1,52 +1,55 @@
 import { Ref, ref } from "vue";
 
-export const todosList: Ref<
-	{ id: number; task: string; isChecked: boolean }[]
-> = ref([
-	{ id: 33, task: "learn React", isChecked: false },
-	{ id: 66, task: "learn Svelte", isChecked: true },
-	{ id: 44, task: "Playin with...", isChecked: false },
-	{ id: 88, task: "Playin with...", isChecked: false },
-]);
+export const showTodosList: Ref<todoList.ITodoItem[]> = ref([]);
 
 export function useTodoList() {
-	function createNewTask(taskName: string) {
-		if (taskName === "") return;
+	// todoList Object
+	const todosList: Ref<todoList.ITodoItem[]> = ref([
+		{ id: 33, task: "learn React", isChecked: false },
+		{ id: 66, task: "learn Svelte", isChecked: true },
+		{ id: 44, task: "Playin with...", isChecked: false },
+		{ id: 88, task: "Playin with XHTML", isChecked: false },
+	]);
+
+	// Create New Tasks
+	function createNewTask(taskName: string): void {
+		if (taskName === "" || taskName.length < 4) {
+			alert(`Task Name "${taskName}" is not valid, try again!`);
+			return;
+		}
 		const newTask: { id: number; task: string; isChecked: boolean } = {
 			id: Date.now(),
 			task: taskName.trim(),
 			isChecked: false,
 		};
-		todosList.value.unshift(newTask);
+		showTodosList.value.unshift(newTask);
 		console.info("🌟 Create Task Item", taskName);
 
-		console.table(JSON.stringify(todosList.value));
+		console.table(showTodosList.value);
+
+		// showTodosList.value = todosList.value;
 	}
 
+	// Delete Task By ID
 	function deleteTask(taskId: number): void {
-		const resultTasks = todosList.value.filter(
-			(taskItem) => taskItem.id !== taskId
+		console.info("❌ Delete Task Item ==>>", taskId);
+		showTodosList.value = showTodosList.value.filter(
+			(task) => task.id !== taskId
 		);
-
-		todosList.value = resultTasks;
-		console.info("❌ Delete Task Item", taskId);
-		console.table(todosList.value);
 	}
 
-	function checkedTask(taskId: number): boolean {
+	// Check/Uncheck Task by ID
+	function checkedTask(taskId: number): void {
 		console.info("✔️ Check Task Item", taskId);
-		todosList.value.forEach((taskItem) => {
+		showTodosList.value.forEach((taskItem) => {
 			if (taskItem.id === taskId) {
 				taskItem.isChecked = !taskItem.isChecked;
 				console.info(
 					`Task  ${taskItem.id} is checked? `,
 					taskItem.isChecked
 				);
-				return taskItem.isChecked;
 			}
 		});
-
-		return false;
 	}
 
 	return { todosList, createNewTask, deleteTask, checkedTask };

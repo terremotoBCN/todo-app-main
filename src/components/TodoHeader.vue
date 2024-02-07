@@ -1,4 +1,7 @@
 <script setup lang="ts">
+	//	theme
+	import { storedTheme, switchTheme } from "@/ts/themes";
+
 	const props = defineProps<{
 		appTitle: string;
 		bar?: number;
@@ -10,13 +13,12 @@
 
 		<button
 			id="theme-toggle"
-			class="todo-header__theme_toggle todo-header__theme_toggle--dark"
+			class="todo-header__theme_toggle"
 			type="button"
+			@click="switchTheme"
 		>
 			<span> toggle theme </span>
 		</button>
 	</header>
 	<!-- /// .todo-header -->
 </template>
-
-<style lang="scss"></style>

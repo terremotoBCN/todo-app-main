@@ -1,5 +1,5 @@
-@use "generic" as generic;
-@use "elements" as elements;
-@use "objects" as objects;
-@use "components" as components;
-@use "trumps" as trumps;
+@forward "settings";
+@forward "tools";
+@forward "elements";
+@forward "components";
+@forward "utilities";

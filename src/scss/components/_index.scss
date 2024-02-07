@@ -1,6 +1,9 @@
-/* 06 - Components.scss */
-@use "TodoHeader";
-@use "TodoList";
-@use "TodoFooter";
-@use "TodoFilter";
-@use "TodoAttribution";
+//* 06 - Components.scss */
+@forward "./TodoApp";
+@forward "./TodoHeader";
+@forward "./TodoInput";
+@forward "./TodoList";
+@forward "./TodoItem";
+@forward "./TodoFilter";
+@forward "./TodoFooter";
+@forward "./TodoAttribution";

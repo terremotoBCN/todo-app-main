@@ -1,0 +1,49 @@
+@use "../settings";
+@use "../tools";
+
+$app-padding: 24px;
+
+#app {
+	position: relative;
+
+	box-sizing: border-box;
+	margin: auto;
+	padding: 0 $app-padding;
+
+	min-width: settings.$brakpoint-mobile;
+	min-height: 100vh;
+	// height: 100vh;
+
+	@include tools.flexbox(
+		$direction: column,
+		$content: normal,
+		$items: stretch
+	);
+	box-sizing: border-box;
+	padding-bottom: 1.6rem;
+	background-color: var(--app-background, settings.$dark-app-background);
+	background-image: var(
+		--header-image-mobile,
+		url("@assets/bg-mobile-dark.jpg")
+	);
+
+	color: var(--app-color, settings.$dark-theme_very-dark-grayish-blue);
+	background-repeat: repeat-x;
+	background-size: auto;
+	background-position: 50% 0%;
+
+	@include tools.themeTransition;
+
+	@include tools.mqMobile {
+		width: settings.$brakpoint-mobile;
+	}
+
+	@include tools.mqDesktop {
+		width: auto;
+		max-width: calc($app-padding + 540px + $app-padding);
+		background-image: var(
+			--header-image-desktop,
+			url("@assets/bg-desktop-dark.jpg")
+		);
+	}
+}

@@ -1,6 +1,6 @@
 @use "sass:color";
-@use "../settings" as settings;
-@use "../tools" as tools;
+@use "../settings";
+@use "../tools";
 
 html {
 	position: relative;
@@ -13,10 +13,7 @@ html {
 		margin: 0.3rem;
 		padding: 0.3rem 0.6rem;
 		// background-color: color.adjust(settings.$blue-gradient, $alpha: 0.5);
-		background-color: adjust-color(
-			$color: settings.$bright-blue,
-			$alpha: -0.5
-		);
+		background-color: var(--app-background, settings.$dark-app-background);
 		font-size: 0.66rem;
 		border-radius: 5rem;
 
@@ -35,9 +32,28 @@ html {
 // 	}
 // }
 
-#app {
+// #app {
+// 	&:hover {
+// 		background-image: url("@/../design/mobile-design-dark.jpg");
+// 		background-repeat: no-repeat;
+// 	}
+// }
+
+pre.result {
+	background-color: #ececec;
+	position: absolute;
+	bottom: 0.1rem;
+	right: 1rem;
+	opacity: 0.33;
+	z-index: 1;
+	padding: 0.5srem;
+	border-radius: 8px;
+	box-shadow: 4px 4px 4px -2px #cacaca;
+	font-size: 8px;
 	&:hover {
-		background-image: url(~/../../../../design/mobile-design-dark.jpg);
-		background-repeat: no-repeat;
+		font-size: 11pt;
+		opacity: 0.75;
+		z-index: 100;
+		color: crimson;
 	}
 }

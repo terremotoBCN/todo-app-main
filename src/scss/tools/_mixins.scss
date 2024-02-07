@@ -1,6 +1,5 @@
-@use "../settings" as settings;
+@use "../settings";
 
-/*	01 - minxins.scss */
 @mixin flexbox(
 	$direction: column,
 	$content: center,
@@ -29,16 +28,18 @@
 	content: "";
 	opacity: 0;
 	background: transparent url($icoPath) no-repeat 50% 50% / 90% 90%;
-	// transition: 0.66s all ease-in-out;
 	transition: 0.66s all cubic-bezier(0.68, -0.55, 0.27, 1.55);
 	position: absolute;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
-	// max-width: 20px;
-	// max-height: 20px;
 	background-size: 20px;
 	transform-origin: $transformX $transformY;
 	transform: rotate(-90deg);
+}
+
+@mixin themeTransition() {
+	transition: background settings.$transition-theme,
+		color settings.$transition-theme, border settings.$transition-theme;
 }

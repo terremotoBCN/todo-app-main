@@ -1,9 +1,9 @@
 // @use "sass:map";
-@use "../settings" as settings;
+@use "../settings";
 
 :root {
 	// Variables
-	--border-radius: #{settings.$border-radius};
+	--border-radius: #{settings.$module-border-radius};
 
 	// layout
 	--layout-mobile: #{map-get(settings.$layout-size, "mobile")};
@@ -13,53 +13,76 @@
 	--bright-blue: #{settings.$bright-blue};
 	--blue-gradient: #{settings.$blue-gradient};
 	--purple-gradient: #{settings.$purple-gradient};
-	--dark-app-shadow: #{settings.$dark-app-shadow};
 
-	--check-color: #{settings.$check-color};
 	--check-background: #{settings.$check-background};
 
-	/*	APP DARK THEME - default	*/
-	// Dark theme colors for default
-	--header-color: #{settings.$dark-header-color};
-	--header-gradient: #{settings.$dark-header-gradient};
+	//### Light Theme Tokens
 
-	--app-background: #{settings.$dark-app-background};
+	--light-theme_very-light-gray: #{settings.$light-theme_very-light-gray};
+	--light-theme_very-light-grayish-blue: #{settings.$light-theme_very-light-grayish-blue};
+	--light-theme_light-grayish-blue: #{settings.$light-theme_light-grayish-blue};
+	--light-theme_dark-grayish-blue: #{settings.$light-theme_dark-grayish-blue};
+	--light-theme_very-dark-grayish-blue: #{settings.$light-theme_very-dark-grayish-blue};
 
-	--item-background: #{settings.$dark-item-background};
-	--item-color: #{settings.$dark-item-color};
+	///### Dark Theme Tokens
 
-	--text-color: #{settings.$dark-text-color};
-	--text-color-disabled: #{settings.$dark-text-color-disabled};
+	$dark-theme_very-dark-blue: hsl(235, 21%, 11%) !default;
+	$dark-theme_very-dark-desaturated-blue: hsl(235, 24%, 19%) !default;
+	$dark-theme_light-grayish-blue: hsl(234, 39%, 85%) !default;
+	$dark-theme_light-grayish-blue-hover: hsl(236, 33%, 92%) !default;
+	$dark-theme_dark-grayish-blue: hsl(234, 11%, 52%) !default;
+	$dark-theme_very-dark-grayish-blue: hsl(233, 14%, 35%) !default;
+	$dark-theme_much-darker-grayish-blue: hsl(237, 14%, 26%) !default;
 }
 
 /*	APP LIGHT THEME	*/
 html[data-theme="light"],
 html[data-theme*="light"],
 html[data-theme~="light" i] {
-	--header-color: #{settings.$light-header-color};
-	--header-gradient: #{settings.$light-header-gradient};
-
 	--app-background: #{settings.$light-app-background};
+	--app-color: #{settings.$light-app-color};
 
-	--item-background: #{settings.$light-item-background};
+	--header-color: #{settings.$light-header-color};
+	--header-image-mobile: #{map-get(settings.$header-image, "mobile-light")};
+	--header-image-desktop: #{map-get(settings.$header-image, "desktop-light")};
+
+	--input-background: #{settings.$light-item-background};
+	--input-color: #{settings.$light-input-color};
+	--input-placeholder: #{settings.$light-input-placeholder};
+
+	--item-background: #{settings.$neutral-white};
 	--item-color: #{settings.$light-item-color};
+	--item-color-completed: #{settings.$light-item-color-completed};
+	--item-border-color: #{settings.$light-item-border-color};
 
-	--text-color: #{settings.$light-text-color};
-	--text-color-disabled: #{settings.$light-text-color-disabled};
+	--footer-background: #{settings.$light-footer-background};
+	--footer-color: #{settings.$light-footer-color};
+	--footer-color-hover: #{settings.$light-footer-color-hover};
+	--footer-color-active: #{settings.$light-footer-color-active};
 }
 
 /*	APP DARK THEME - default	*/
 html[data-theme="dark"],
 html[data-theme*="dark"],
 html[data-theme~="dark" i] {
-	--header-color: #{settings.$dark-header-color};
-	--header-gradient: #{settings.$dark-header-gradient};
-
 	--app-background: #{settings.$dark-app-background};
+	--app-color: #{settings.$dark-app-color};
+
+	--header-color: #{settings.$dark-header-color};
+	--header-image-mobile: #{map-get(settings.$header-image, "mobile-dark")};
+	--header-image-desktop: #{map-get(settings.$header-image, "desktop-dark")};
+
+	--input-background: #{settings.$dark-item-background};
+	--input-color: #{settings.$dark-input-color};
+	--input-placeholder: #{settings.$dark-input-placeholder};
 
 	--item-background: #{settings.$dark-item-background};
 	--item-color: #{settings.$dark-item-color};
+	--item-color-completed: #{settings.$dark-item-color-completed};
+	--item-border-color: #{settings.$dark-item-border-color};
 
-	--text-color: #{settings.$dark-text-color};
-	--text-color-disabled: #{settings.$dark-text-color-disabled};
+	--footer-background: #{settings.$dark-footer-background};
+	--footer-color: #{settings.$dark-footer-color};
+	--footer-color-hover: #{settings.$dark-footer-color-hover};
+	--footer-color-active: #{settings.$dark-footer-color-active};
 }

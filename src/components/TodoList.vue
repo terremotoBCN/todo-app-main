@@ -1,57 +1,42 @@
 <script setup lang="ts">
-	import { ref, onMounted } from "vue";
+	import { computed } from "vue";
 	import TodoItem from "./TodoItem.vue";
+	import iconCheck from "@assets/icon-check.svg";
 
-	import { useTodoList } from "../composables/useTodoList";
-	import { computed } from "@vue/reactivity";
+	import { useTodoList, showTodosList } from "../composables/useTodoList";
 
-	const todosList = ref(useTodoList().todosList);
+	const { checkedTask, deleteTask } = useTodoList();
 
-	// computed((todoList) => todoList);
-
-	// const emits = defineEmits<{}>();
-
-	onMounted(() => {
-		/* DRAGABBLE OPTION */
-		// console.log("paso por aqui");
-		// let items = document.querySelectorAll(".todo-item");
-		// items.forEach(function (item) {
-		// 	item.addEventListener("dragstart", handleDragStart);
-		// 	item.addEventListener("dragover", handleDragOver,);
-		// 	item.addEventListener("dragenter", handleDragEnter);
-		// 	item.addEventListener("dragleave", handleDragLeave);
-		// 	item.addEventListener("dragend", handleDragEnd);
-		// 	item.addEventListener("drop", handleDrop);
-		// });
+	const showList = computed(() => {
+		return showTodosList.value;
 	});
 </script>
 <template>
-	<ul class="todo-list">
-		<pre class="result">
-			{{ todosList }}
-		</pre
-		>
-		<todo-item
-			v-for="item in todosList"
-			:todoId="item.id.toString()"
-			:todoText="item.task"
-			:isChecked="item.isChecked"
-		>
-		</todo-item>
-	</ul>
+	<div class="todo-list">
+		<p v-if="!showTodosList" class="todo-list__loader">loading...</p>
+		<p v-if="showTodosList.length < 1" class="todo-list__note">
+			Congratulations, <br />
+			you have no pending tasks
+			<img :src="iconCheck" alt="icon check" />
+		</p>
+		<ul v-else class="todo-list__list">
+			<todo-item
+				v-for="item in showTodosList"
+				class="todo-list__item"
+				:todoId="item.id"
+				:todoText="item.task"
+				:isChecked="item.isChecked"
+				@delete="deleteTask"
+				@check="checkedTask"
+			>
+			</todo-item>
+			<pre class="result">
+			{{ showTodosList }}
+			</pre
+			>
+		</ul>
+	</div>
+
 	<!-- /// .todo-list -->
 </template>
-<style scoped lang="scss">
-	pre.result {
-		background-color: #ececec;
-		position: absolute;
-		top: 0.1rem;
-		right: 1rem;
-		opacity: 0.66;
-		z-index: -1;
-		padding: 0.5srem;
-		border-radius: 8px;
-		box-shadow: 4px 4px 4px -2px #cacaca;
-		font-size: 8px;
-	}
-</style>
+<style scoped lang="scss"></style>

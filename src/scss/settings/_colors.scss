@@ -1,62 +1,92 @@
 // 	***	Colors	***	//
 
-// PRIMARY
+//### Primary Tokens
+
 $bright-blue: hsl(220, 98%, 61%) !default;
 $blue-gradient: hsl(192, 100%, 67%) !default;
 $purple-gradient: hsl(280, 87%, 65%) !default;
-$dark-app-shadow: hsla(235, 21%, 11%, 1) !default;
 
-$check-color: hsl(236, 33%, 92%) !default;
 $check-background: linear-gradient(
 	45deg,
 	$blue-gradient,
 	$purple-gradient
 ) !default;
 
+//### Light Theme Tokens
+
+$light-theme_very-light-gray: hsl(0, 0%, 98%) !default;
+$light-theme_very-light-grayish-blue: hsl(236, 33%, 92%) !default;
+$light-theme_light-grayish-blue: hsl(233, 11%, 84%) !default;
+$light-theme_dark-grayish-blue: hsl(236, 9%, 61%) !default;
+$light-theme_very-dark-grayish-blue: hsl(235, 19%, 35%) !default;
+
+///### Dark Theme Tokens
+
+$dark-theme_very-dark-blue: hsl(235, 21%, 11%) !default;
+$dark-theme_very-dark-desaturated-blue: hsl(235, 24%, 19%) !default;
+$dark-theme_light-grayish-blue: hsl(234, 39%, 85%) !default;
+$dark-theme_light-grayish-blue-hover: hsl(236, 33%, 92%) !default;
+$dark-theme_dark-grayish-blue: hsl(234, 11%, 52%) !default;
+$dark-theme_very-dark-grayish-blue: hsl(233, 14%, 35%) !default;
+$dark-theme_much-darker-grayish-blue: hsl(237, 14%, 26%) !default;
+
 $header-image: (
-	"mobile-dark": url("../../assets/bg-mobile-dark.jpg"),
-	"mobile-light": url("../../assets/bg-mobile-light.jpg"),
-	"desktop-dark": url("../../assets/bg-desktop-dark.jpg"),
-	"desktop-light": url("../../assets/bg-desktop-light.jpg"),
+	"mobile-dark": url("@assets/bg-mobile-dark.jpg"),
+	"mobile-light": url("@assets/bg-mobile-light.jpg"),
+	"desktop-dark": url("@assets/bg-desktop-dark.jpg"),
+	"desktop-light": url("@assets/bg-desktop-light.jpg"),
 );
 
-// Neutral
-$neutral-black: hsl(0, 0%, 10%) !default;
+// Neutral Tokens
+$neutral-black: hsl(0, 0%, 0%) !default;
 $neutral-gray: hsl(0, 0%, 50%) !default;
 $neutral-grey: hsl(0, 0%, 50%) !default;
-$neutral-white: hsl(0, 0%, 90%) !default;
+$neutral-white: hsl(0, 0%, 100%) !default;
 
-// Light Theme
+//// => THEMES COLORS
 
-$light-header-color: hsl(236, 33%, 92%) !default;
-$light-header-gradient: linear-gradient(
-	90deg,
-	hsl(280, 87%, 65%),
-	hsl(192, 100%, 67%)
-) !default;
+// Light Theme Colors
+$light-app-background: $light-theme_very-light-gray;
+$light-app-color: $light-theme_dark-grayish-blue;
 
-$light-app-background: hsl(235, 32%, 92%) !default;
+$light-header-color: $light-theme_very-light-gray;
 
-$light-item-color: hsl(233, 11%, 84%) !default;
-$light-item-background: hsl(236, 0%, 98%) !default;
+$light-input-background: $neutral-white;
+$light-input-color: $light-theme_very-dark-grayish-blue;
+$light-input-placeholder: $light-theme_dark-grayish-blue;
 
-$light-text-color: hsl(235, 19%, 35%) !default;
-$light-text-color-disabled: hsl(236, 9%, 61%) !default;
+$light-item-background: $neutral-white;
+$light-item-color: $light-theme_very-dark-grayish-blue;
+$light-item-color-completed: $light-theme_dark-grayish-blue;
+$light-item-border-color: $light-theme_very-light-grayish-blue;
+$light-item-check-background: $check-background;
+$light-item-check-color: $light-theme_very-light-gray;
+$light-item-check-border: $check-background;
 
-// Dark Theme
-$dark-header-color: hsl(236, 33%, 92%) !default;
-$dark-header-gradient: linear-gradient(
-	-90deg,
-	hsl(280, 87%, 65%),
-	hsl(192, 100%, 67%)
-) !default;
+$light-footer-background: $neutral-white;
+$light-footer-color: $light-theme_dark-grayish-blue;
+$light-footer-color-hover: $light-theme_very-dark-grayish-blue;
+$light-footer-color-active: $bright-blue;
 
-$dark-app-background: hsla(235, 21%, 11%, 1) !default;
+// Dark Theme Colors
+$dark-app-background: $dark-theme_very-dark-blue;
+$dark-app-color: $dark-theme_very-dark-grayish-blue;
 
-$dark-item-color: hsl(237, 14%, 26%) !default;
-$dark-item-background: hsl(235, 24%, 19%) !default;
+$dark-header-color: $light-theme_very-light-gray;
 
-$dark-text-color: hsl(234, 39%, 85%) !default;
-$dark-text-color-disabled: hsl(234, 11%, 52%) !default;
+$dark-input-background: $dark-theme_very-dark-desaturated-blue;
+$dark-input-color: $dark-theme_light-grayish-blue;
+$dark-input-placeholder: $dark-theme_dark-grayish-blue;
 
-$dark-text-color-alt: hsl(233, 14%, 35%) !default;
+$dark-item-background: $dark-theme_very-dark-desaturated-blue;
+$dark-item-color: $dark-theme_light-grayish-blue;
+$dark-item-color-completed: $dark-theme_very-dark-grayish-blue;
+$dark-item-border-color: $dark-theme_much-darker-grayish-blue;
+$dark-item-check-background: $check-background;
+$dark-item-check-color: $light-theme_very-light-gray;
+$dark-item-check-border: $check-background;
+
+$dark-footer-background: $dark-theme_very-dark-desaturated-blue;
+$dark-footer-color: $dark-theme_very-dark-grayish-blue;
+$dark-footer-color-hover: $dark-theme_light-grayish-blue-hover;
+$dark-footer-color-active: $bright-blue;
