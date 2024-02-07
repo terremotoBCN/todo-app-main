@@ -1,4 +1,4 @@
-export const themeName: string = "theme-todo";
+export const themeName: string = "todo-theme";
 export const themeDark: string = "dark";
 export const themeLight: string = "light";
 
@@ -10,8 +10,16 @@ export const storedTheme =
 
 console.info(" :arrow_lower_right:  storedTheme::>>", storedTheme);
 
+document.addEventListener("DOMContentLoaded", (event) => {
+	setTheme(storedTheme);
+});
+
 export function setTheme(theme: string) {
-	const themeToogle = document.getElementById("theme-toggle");
+	localStorage.setItem(themeName, theme);
+	document.documentElement.setAttribute("data-theme", theme);
+
+	const themeToogle: HTMLElement | null =
+		document.getElementById("theme-toggle");
 
 	switch (theme) {
 		case themeDark:
@@ -21,6 +29,8 @@ export function setTheme(theme: string) {
 			themeToogle?.classList.add(
 				"todo-header__theme_toggle--" + themeDark
 			);
+
+			console.log(themeToogle?.classList);
 
 			break;
 
@@ -32,6 +42,7 @@ export function setTheme(theme: string) {
 				"todo-header__theme_toggle--" + themeLight
 			);
 
+			console.log(themeToogle?.classList);
 			break;
 
 		default:
@@ -39,24 +50,10 @@ export function setTheme(theme: string) {
 	}
 }
 
-export function switchTheme() {
-	const themeToogle = document.getElementById("theme-toggle");
-	const currentTheme = document.documentElement.getAttribute("data-theme");
-	let targetTheme: string = themeLight;
+export function switchTheme(e: Event) {
+	const currentTheme = localStorage.getItem(themeName);
 
-	if (currentTheme === themeLight) {
-		targetTheme = themeDark;
-	}
+	const targetTheme = currentTheme === themeLight ? themeDark : themeLight;
 
-	try {
-		document.documentElement.setAttribute("data-theme", targetTheme);
-		themeToogle?.classList.remove(
-			"todo-header__theme_toggle--" + currentTheme
-		);
-		themeToogle?.classList.add("todo-header__theme_toggle--" + targetTheme);
-		localStorage.setItem(themeName, targetTheme);
-		console.info(" Switching Theme:", targetTheme);
-	} catch (error) {
-		console.error("Error Swtiching theme", error);
-	}
+	setTheme(targetTheme);
 }
